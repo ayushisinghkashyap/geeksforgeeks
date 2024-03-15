@@ -83,7 +83,7 @@ class Solution
     {
        // Your code here
        del_node->data = del_node->next->data;
-         del_node->next = del_node->next->next;
+        del_node->next = del_node->next->next;
     }
 
 };

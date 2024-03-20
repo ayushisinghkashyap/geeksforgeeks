@@ -112,70 +112,29 @@ class Node {
 }
 */
 class Solution{
-    private int calH(Node root) {
-
-        if (root == null)
-
-            return 0;
-
-        int left = calH(root.left);
-
-        int right = calH(root.right);
-
-        return 1 + Math.max(left, right);
-
+    public int sumOfLongRootToLeafPath(Node root)
+    {
+        //code here
+        int[] sol = new int[]{0, 0};
+        solve(root, 0, 0, sol);
+        return sol[1];
     }
-
- 
-
-    private void solve(Node root, int cnt, List<Integer> arr, int sum, int[] maxi) {
-
-        if (root == null && cnt == 0) {
-
-            maxi[0] = Math.max(maxi[0], sum);
-
+    
+    private void solve(Node root, int depth, int prevSum,  int[] sol){
+        if(root == null){
+            if(depth > sol[0]){ // update depth and value both if path is longest
+                sol[1] = prevSum;
+                sol[0] = depth;
+            }else if(depth == sol[0] && sol[1] < prevSum){
+                // if leaf node is at same level, update only if current path sum
+                // is greater.
+                sol[1] = prevSum;
+            }
             return;
-
         }
-
-        if (root == null)
-
-            return;
-
-        arr.add(root.data);
-
-        cnt--;
-
-        sum += root.data;
-
- 
-
-        solve(root.left, cnt, arr, sum, maxi);
-
-        solve(root.right, cnt, arr, sum, maxi);
-
- 
-
-        // Backtrack: Remove the last element when returning from recursion
-
-        arr.remove(arr.size() - 1);
-
-    }
-
- 
-
-    public int sumOfLongRootToLeafPath(Node root) {
-
-        int cnt = calH(root);
-
-        int sum = 0;
-
-        int[] maxi = {Integer.MIN_VALUE};
-
-        List<Integer> arr = new ArrayList<>();
-
-        solve(root, cnt, arr, sum, maxi);
-
-        return maxi[0];
+            
+        int currSum = prevSum + root.data;
+        solve(root.left, depth + 1, currSum, sol);
+        solve(root.right, depth + 1, currSum, sol);
     }
 }

@@ -32,6 +32,5 @@ class Solution {
             a[i]=(a[i-1]+a[i-2])%1000_000_007;
         }
         return a;
-        
     }
 }

@@ -27,8 +27,7 @@ class GFG {
 
 class Solution {
      public void solve(String a, int i, int r, ArrayList<String>re){
-        // code here
-         if(r==0){
+          if(r==0){
             re.add(a);
             return;
         }

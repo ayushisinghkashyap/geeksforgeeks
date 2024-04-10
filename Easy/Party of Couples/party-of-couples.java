@@ -31,10 +31,5 @@ class GFG
 class Solution{
     static int findSingle(int n, int arr[]){
         // code here
-         int result = 0;
-        for(int x: arr){
-            result ^= x;
-        }
-        return result;
     }
 }

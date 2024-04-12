@@ -38,6 +38,5 @@ class Solution {
             sum += count * (count - 1) / 2 * (1L << i);
         }
         return sum;
-        
     }
 }

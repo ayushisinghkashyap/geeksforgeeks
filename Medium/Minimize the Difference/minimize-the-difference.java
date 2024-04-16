@@ -61,7 +61,7 @@ class GFG {
 
 
 class Solution {
-        // Function to minimize the difference between the maximum and minimum element in k-sized subarrays
+    // Function to minimize the difference between the maximum and minimum element in k-sized subarrays
     public static int minimizeDifference(int n, int k, int[] arr) {
         // Array to store nodes for each element
         Node[] nodes = new Node[n];
@@ -112,6 +112,7 @@ class Solution {
         return ans;
     }
 }
+
 // Node class to store previous and next large and minimum values
 class Node {
     int prevLarge, nextLarge, prevMin, nextMin;
@@ -124,4 +125,5 @@ class Node {
         nextMin = nm;
     }
 }
+
         

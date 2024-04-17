@@ -38,18 +38,17 @@ class Solution
     public int[] twoRepeated(int arr[], int n)
     {
         // Your code here
-         int k=0;
-        int arr1[] = new int [2];
-        Map<Integer,Integer>  mp = new HashMap<Integer,Integer>();
-        for(int i=0;i<n+2;i++) {
-            if(mp.containsKey(arr[i])) {
-               arr1[k++] = arr[i]; 
-            }
-            else {
-                mp.put(arr[i],1);
+        Set<Integer> set = new HashSet<>();
+        int repeat[] = new int[2];
+        int x=0;
+        for(int i : arr){
+            if(set.contains(i)){
+                repeat[x++] = i;
+            }else{
+                set.add(i);
             }
         }
-        return arr1;
+        return repeat;
     }
     
 }

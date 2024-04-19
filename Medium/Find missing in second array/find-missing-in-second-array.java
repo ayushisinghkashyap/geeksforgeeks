@@ -23,7 +23,6 @@ class Solution
         for(int num : b) hs.add(num);
         for(int num: a) if(!hs.contains(num)) res.add(num);
         return res;
-        
     }
 }
 

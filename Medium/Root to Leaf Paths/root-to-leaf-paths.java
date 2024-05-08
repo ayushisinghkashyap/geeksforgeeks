@@ -186,7 +186,7 @@ class Solution {
         temp.remove(temp.size()-1);
     }
     public static ArrayList<ArrayList<Integer>> Paths(Node root) {
-       
+     
         ArrayList<ArrayList<Integer>> res = new ArrayList<>();
         ArrayList<Integer> temp = new ArrayList<>();
         solve(root , res , temp);

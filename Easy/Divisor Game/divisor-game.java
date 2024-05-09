@@ -26,7 +26,7 @@ class GFG {
 
 class Solution {
     public static boolean divisorGame(int n) {
-        // code here
+        // code her
         return n%2 == 0;
     }
 }

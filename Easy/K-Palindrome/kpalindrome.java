@@ -23,7 +23,7 @@ class GFG {
 
 
 class Solution {
-    int lcs(int n,int m,String s1, String s2,int dp[][]){
+   int lcs(int n,int m,String s1, String s2,int dp[][]){
         if(n==0 || m==0 ) return 0;
         
         if(dp[n][m]!=-1)return dp[n][m];
@@ -46,6 +46,5 @@ class Solution {
         int ans=lcs(n,n,temp, str,dp);
         int diff=n-ans;
     	return diff<=k?1:0;
-        
     }
 }

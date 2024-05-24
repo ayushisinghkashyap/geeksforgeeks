@@ -22,8 +22,8 @@ class GFG {
 
 
 
-class Solution{
-        long max_Books(int arr[], int n, int k) {
+class Solution {
+    long max_Books(int arr[], int n, int k) {
         long cur=0, ans=0;
         
         for(int i=0;i<n;i++){
